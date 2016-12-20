@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A28E1ED0-A733-4FAE-838C-521859305BD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BingoBlockParty</RootNamespace>
+    <AssemblyName>BingoBlockParty</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Engine">
+      <HintPath>..\..\Penguio-Framework\Engine\bin\Debug\Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BallGame\ClientGameBoard.cs" />
+    <Compile Include="BallGame\ClientGameModel.cs" />
+    <Compile Include="BallGame\ClientPegPhysicsManager.cs" />
+    <Compile Include="BallGame\Pieces\ClientCannon.cs" />
+    <Compile Include="BallGame\Pieces\ClientCannonBall.cs" />
+    <Compile Include="BallGame\Pieces\ClientChute.cs" />
+    <Compile Include="BallGame\Pieces\ClientPeg.cs" />
+    <Compile Include="BallGame\Planes\ClientBackgroundPlane.cs" />
+    <Compile Include="BallGame\Planes\ClientCannonBallPlane.cs" />
+    <Compile Include="BallGame\Planes\ClientCannonPlane.cs" />
+    <Compile Include="BallGame\Planes\ClientChutesPlane.cs" />
+    <Compile Include="BallGame\Planes\ClientOverlaysPlane.cs" />
+    <Compile Include="BallGame\Planes\ClientPegsPlane.cs" />
+    <Compile Include="BallGame\ViewManager.cs" />
+    <Compile Include="BingoArea\BingoLayout.cs" />
+    <Compile Include="CommonBallGame\GameBoard.cs" />
+    <Compile Include="CommonBallGame\GameModel.cs" />
+    <Compile Include="CommonBallGame\Models\IPlane.cs" />
+    <Compile Include="CommonBallGame\Models\PegData.cs" />
+    <Compile Include="CommonBallGame\Models\PegType.cs" />
+    <Compile Include="CommonBallGame\PegPhysicsManager.cs" />
+    <Compile Include="CommonBallGame\Pieces\Cannon.cs" />
+    <Compile Include="CommonBallGame\Pieces\CannonBall.cs" />
+    <Compile Include="CommonBallGame\Pieces\Chute.cs" />
+    <Compile Include="CommonBallGame\Pieces\Peg.cs" />
+    <Compile Include="CommonBallGame\Planes\CannonBallPlane.cs" />
+    <Compile Include="CommonBallGame\Planes\CannonPlane.cs" />
+    <Compile Include="CommonBallGame\Planes\ChutesPlane.cs" />
+    <Compile Include="CommonBallGame\Planes\PegsPlane.cs" />
+    <Compile Include="Box2d\callbacks\ContactFilter.cs" />
+    <Compile Include="Box2d\callbacks\ContactImpulse.cs" />
+    <Compile Include="Box2d\callbacks\ContactListener.cs" />
+    <Compile Include="Box2d\callbacks\DebugDraw.cs" />
+    <Compile Include="Box2d\callbacks\DestructionListener.cs" />
+    <Compile Include="Box2d\callbacks\PairCallback.cs" />
+    <Compile Include="Box2d\callbacks\QueryCallback.cs" />
+    <Compile Include="Box2d\callbacks\RayCastCallback.cs" />
+    <Compile Include="Box2d\callbacks\TreeCallback.cs" />
+    <Compile Include="Box2d\callbacks\TreeRayCastCallback.cs" />
+    <Compile Include="Box2d\collision\AABB.cs" />
+    <Compile Include="Box2d\collision\broadphase\BroadPhase.cs" />
+    <Compile Include="Box2d\collision\broadphase\BroadPhaseStrategy.cs" />
+    <Compile Include="Box2d\collision\broadphase\DynamicTree.cs" />
+    <Compile Include="Box2d\collision\broadphase\DynamicTreeNode.cs" />
+    <Compile Include="Box2d\collision\broadphase\Pair.cs" />
+    <Compile Include="Box2d\collision\Collision.cs" />
+    <Compile Include="Box2d\collision\ContactID.cs" />
+    <Compile Include="Box2d\collision\Distance.cs" />
+    <Compile Include="Box2d\collision\DistanceInput.cs" />
+    <Compile Include="Box2d\collision\DistanceOutput.cs" />
+    <Compile Include="Box2d\collision\Manifold.cs" />
+    <Compile Include="Box2d\collision\ManifoldPoint.cs" />
+    <Compile Include="Box2d\collision\RayCastInput.cs" />
+    <Compile Include="Box2d\collision\RayCastOutput.cs" />
+    <Compile Include="Box2d\collision\shapes\ChainShape.cs" />
+    <Compile Include="Box2d\collision\shapes\CircleShape.cs" />
+    <Compile Include="Box2d\collision\shapes\EdgeShape.cs" />
+    <Compile Include="Box2d\collision\shapes\MassData.cs" />
+    <Compile Include="Box2d\collision\shapes\PolygonShape.cs" />
+    <Compile Include="Box2d\collision\shapes\Shape.cs" />
+    <Compile Include="Box2d\collision\shapes\ShapeType.cs" />
+    <Compile Include="Box2d\collision\TimeOfImpact.cs" />
+    <Compile Include="Box2d\collision\WorldManifold.cs" />
+    <Compile Include="Box2d\common\Color3f.cs" />
+    <Compile Include="Box2d\common\Console.cs" />
+    <Compile Include="Box2d\common\IViewportTransform.cs" />
+    <Compile Include="Box2d\common\Mat22.cs" />
+    <Compile Include="Box2d\common\Mat33.cs" />
+    <Compile Include="Box2d\common\MathUtils.cs" />
+    <Compile Include="Box2d\common\OBBViewportTransform.cs" />
+    <Compile Include="Box2d\common\PlatformMathUtils.cs" />
+    <Compile Include="Box2d\common\RaycastResult.cs" />
+    <Compile Include="Box2d\common\Rot.cs" />
+    <Compile Include="Box2d\common\Settings.cs" />
+    <Compile Include="Box2d\common\Sweep.cs" />
+    <Compile Include="Box2d\common\Timer.cs" />
+    <Compile Include="Box2d\common\Transform.cs" />
+    <Compile Include="Box2d\common\Vec2.cs" />
+    <Compile Include="Box2d\common\Vec3.cs" />
+    <Compile Include="Box2d\dynamics\Body.cs" />
+    <Compile Include="Box2d\dynamics\BodyDef.cs" />
+    <Compile Include="Box2d\dynamics\BodyType.cs" />
+    <Compile Include="Box2d\dynamics\ContactManager.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ChainAndCircleContact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ChainAndPolygonContact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\CircleContact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\Contact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ContactCreator.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ContactEdge.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ContactPositionConstraint.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ContactRegister.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ContactSolver.cs" />
+    <Compile Include="Box2d\dynamics\contacts\ContactVelocityConstraint.cs" />
+    <Compile Include="Box2d\dynamics\contacts\EdgeAndCircleContact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\EdgeAndPolygonContact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\PolygonAndCircleContact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\PolygonContact.cs" />
+    <Compile Include="Box2d\dynamics\contacts\Position.cs" />
+    <Compile Include="Box2d\dynamics\contacts\Velocity.cs" />
+    <Compile Include="Box2d\dynamics\Filter.cs" />
+    <Compile Include="Box2d\dynamics\Fixture.cs" />
+    <Compile Include="Box2d\dynamics\FixtureDef.cs" />
+    <Compile Include="Box2d\dynamics\FixtureProxy.cs" />
+    <Compile Include="Box2d\dynamics\Island.cs" />
+    <Compile Include="Box2d\dynamics\joints\ConstantVolumeJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\ConstantVolumeJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\DistanceJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\DistanceJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\FrictionJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\FrictionJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\GearJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\GearJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\Jacobian.cs" />
+    <Compile Include="Box2d\dynamics\joints\Joint.cs" />
+    <Compile Include="Box2d\dynamics\joints\JointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\JointEdge.cs" />
+    <Compile Include="Box2d\dynamics\joints\JointType.cs" />
+    <Compile Include="Box2d\dynamics\joints\LimitState.cs" />
+    <Compile Include="Box2d\dynamics\joints\MouseJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\MouseJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\PrismaticJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\PrismaticJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\PulleyJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\PulleyJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\RevoluteJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\RevoluteJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\RopeJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\RopeJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\WeldJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\WeldJointDef.cs" />
+    <Compile Include="Box2d\dynamics\joints\WheelJoint.cs" />
+    <Compile Include="Box2d\dynamics\joints\WheelJointDef.cs" />
+    <Compile Include="Box2d\dynamics\Profile.cs" />
+    <Compile Include="Box2d\dynamics\SolverData.cs" />
+    <Compile Include="Box2d\dynamics\TimeStep.cs" />
+    <Compile Include="Box2d\dynamics\World.cs" />
+    <Compile Include="Box2d\gwtemul\java\lang\StrictMath.cs" />
+    <Compile Include="Box2d\pooling\arrays\FloatArray.cs" />
+    <Compile Include="Box2d\pooling\arrays\IntArray.cs" />
+    <Compile Include="Box2d\pooling\arrays\Vec2Array.cs" />
+    <Compile Include="Box2d\pooling\IDynamicStack.cs" />
+    <Compile Include="Box2d\pooling\IOrderedStack.cs" />
+    <Compile Include="Box2d\pooling\IWorldPool.cs" />
+    <Compile Include="Box2d\pooling\normal\CircleStack.cs" />
+    <Compile Include="Box2d\pooling\normal\DefaultWorldPool.cs" />
+    <Compile Include="Box2d\pooling\normal\MutableStack.cs" />
+    <Compile Include="Box2d\pooling\normal\OrderedStack.cs" />
+    <Compile Include="Box2d\pooling\stacks\DynamicIntStack.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="InfoArea\InfoAreaLayout.cs" />
+    <Compile Include="LobbyArea\LobbyLayout.cs" />
+    <Compile Include="PeopleArea\PeopleAreaLayout.cs" />
+    <Compile Include="Utils\ClientSwitcher.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
